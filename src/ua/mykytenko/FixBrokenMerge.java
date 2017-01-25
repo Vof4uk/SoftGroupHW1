@@ -10,25 +10,25 @@ public class FixBrokenMerge {
             }
             return arr0 == null ? arr1 : arr0;
         }
-        int[] mergedArray = new int[arr1.length + arr0.length];
+        int[] newArray = new int[arr1.length + arr0.length];
         int runner0 = 0;
         int runner1 = 0;
 
         while (runner0 < arr0.length && runner1 < arr1.length) {
             if (arr0[runner0] <= arr1[runner1]) {
-                mergedArray[runner0 + runner1] = arr0[runner0++];
+                newArray[runner0 + runner1] = arr0[runner0++];
             } else {
-                mergedArray[runner0 + runner1] = arr1[runner1++];
+                newArray[runner0 + runner1] = arr1[runner1++];
             }
         }
 
         if (runner0 == arr0.length) {
-            System.arraycopy(arr1, runner1, mergedArray, runner1 + arr0.length, arr1.length - runner1);
+            System.arraycopy(arr1, runner1, newArray, runner1 + arr0.length, arr1.length - runner1);
         } else if (runner1 == arr1.length) {
-            System.arraycopy(arr0, runner0, mergedArray, runner0 + arr1.length, arr0.length - runner0);
+            System.arraycopy(arr0, runner0, newArray, runner0 + arr1.length, arr0.length - runner0);
         }
 
-        return mergedArray;
+        return newArray;
     }
 
     public static void main(String[] args) {

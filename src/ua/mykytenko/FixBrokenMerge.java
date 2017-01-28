@@ -1,6 +1,7 @@
 package ua.mykytenko;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class FixBrokenMerge {
     public static int[] merge(int[] arr0, int[] arr1) {
@@ -38,6 +39,5 @@ public class FixBrokenMerge {
         System.out.println("arr1 - " + Arrays.toString(arr1));
 
         System.out.println(Arrays.toString(FixBrokenMerge.merge(arr0, arr1)));
-
     }
 }
